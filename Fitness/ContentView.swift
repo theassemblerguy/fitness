@@ -8,14 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.managedObjectContext) var moc
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        TabView {
+            ExerciseListView()
+            .tabItem {
+                Label("Exercises", systemImage: "globe")
+            }
+            CategoryListView()
+            .tabItem {
+                Label("Categories", systemImage: "tray.and.arrow.up.fill")
+            }
         }
-        .padding()
     }
 }
 

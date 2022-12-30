@@ -11,6 +11,12 @@
 		22DC839D295F1C020075961F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DC839C295F1C020075961F /* ContentView.swift */; };
 		22DC839F295F1C040075961F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22DC839E295F1C040075961F /* Assets.xcassets */; };
 		22DC83A2295F1C040075961F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22DC83A1295F1C040075961F /* Preview Assets.xcassets */; };
+		22DC83A9295F236D0075961F /* ExerciseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DC83A8295F236D0075961F /* ExerciseListView.swift */; };
+		22DC83AB295F24920075961F /* CategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DC83AA295F24920075961F /* CategoryListView.swift */; };
+		22DC83B0295F3A460075961F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DC83AF295F3A460075961F /* CoreData.framework */; };
+		22DC83B3295F416B0075961F /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22DC83B1295F416B0075961F /* Model.xcdatamodeld */; };
+		22DC83B5295F44970075961F /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DC83B4295F44970075961F /* DataController.swift */; };
+		22DC83B7295F4C3F0075961F /* AddExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DC83B6295F4C3F0075961F /* AddExerciseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +25,12 @@
 		22DC839C295F1C020075961F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		22DC839E295F1C040075961F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22DC83A1295F1C040075961F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		22DC83A8295F236D0075961F /* ExerciseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListView.swift; sourceTree = "<group>"; };
+		22DC83AA295F24920075961F /* CategoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListView.swift; sourceTree = "<group>"; };
+		22DC83AF295F3A460075961F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		22DC83B2295F416B0075961F /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		22DC83B4295F44970075961F /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		22DC83B6295F4C3F0075961F /* AddExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22DC83B0295F3A460075961F /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,6 +50,7 @@
 			children = (
 				22DC8399295F1C020075961F /* Fitness */,
 				22DC8398295F1C020075961F /* Products */,
+				22DC83AE295F3A450075961F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,10 +65,15 @@
 		22DC8399295F1C020075961F /* Fitness */ = {
 			isa = PBXGroup;
 			children = (
+				22DC83AA295F24920075961F /* CategoryListView.swift */,
 				22DC839A295F1C020075961F /* FitnessApp.swift */,
 				22DC839C295F1C020075961F /* ContentView.swift */,
+				22DC83A8295F236D0075961F /* ExerciseListView.swift */,
 				22DC839E295F1C040075961F /* Assets.xcassets */,
 				22DC83A0295F1C040075961F /* Preview Content */,
+				22DC83B1295F416B0075961F /* Model.xcdatamodeld */,
+				22DC83B4295F44970075961F /* DataController.swift */,
+				22DC83B6295F4C3F0075961F /* AddExerciseView.swift */,
 			);
 			path = Fitness;
 			sourceTree = "<group>";
@@ -65,6 +84,14 @@
 				22DC83A1295F1C040075961F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		22DC83AE295F3A450075961F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				22DC83AF295F3A460075961F /* CoreData.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +165,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				22DC839D295F1C020075961F /* ContentView.swift in Sources */,
+				22DC83B5295F44970075961F /* DataController.swift in Sources */,
+				22DC83A9295F236D0075961F /* ExerciseListView.swift in Sources */,
+				22DC83B7295F4C3F0075961F /* AddExerciseView.swift in Sources */,
+				22DC83B3295F416B0075961F /* Model.xcdatamodeld in Sources */,
+				22DC83AB295F24920075961F /* CategoryListView.swift in Sources */,
 				22DC839B295F1C020075961F /* FitnessApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,6 +302,8 @@
 				DEVELOPMENT_TEAM = X22LNY7NNU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Fitness;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,6 +333,8 @@
 				DEVELOPMENT_TEAM = X22LNY7NNU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Fitness;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -339,6 +375,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		22DC83B1295F416B0075961F /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				22DC83B2295F416B0075961F /* Model.xcdatamodel */,
+			);
+			currentVersion = 22DC83B2295F416B0075961F /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 22DC838F295F1C020075961F /* Project object */;
 }
