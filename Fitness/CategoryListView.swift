@@ -8,18 +8,15 @@
 import SwiftUI
 
 struct CategoryListView: View {
+    
+    @FetchRequest(sortDescriptors: []) var categories: FetchedResults<ExerciseCategory>;
+    
     var body: some View {
-        /*
-        NavigationView {
-            
-        }.navigationTitle("A")
-        */
         NavigationView {
             VStack {
-                Image(systemName: "tray.and.arrow.up.fill")
-                    .imageScale(.large)
-                    .foregroundColor(.accentColor)
-                Text("Hello, world!")
+                List(categories) { category in
+                    NavigationLink(category.name ?? "<missing name>", destination: CategoryView(category: category))
+                }
             }
             .padding()
             .navigationTitle("Categories")
@@ -33,14 +30,6 @@ struct CategoryListView: View {
         }
         
     }
-    
-    func viewDidLoad() {
-        /*
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
-         */
-    }
-    
-    func addTapped() {}
 }
 
 struct CategoryListView_Previews: PreviewProvider {

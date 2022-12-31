@@ -9,20 +9,39 @@ import SwiftUI
 
 struct ExerciseListView: View {
     
+    let thumbSize: CGFloat = 40
+    
     @FetchRequest(sortDescriptors: []) var exercises: FetchedResults<Exercise>;
+    
     var body: some View {
         NavigationView {
             
             VStack {
-                Image(systemName: "globe")
-                    .imageScale(.large)
-                    .foregroundColor(.accentColor)
-                Text("Hello, world!")
-                List(exercises) { exercise in
-                    Text(exercise.name ?? "<missing name>")
+                if exercises.isEmpty {
+                    Text("No exercises defined yet, go add one")
+                } else {
+                    List(exercises) { exercise in
+                        HStack {
+                            if let imageData = exercise.image,
+                               let uiImage = UIImage(data: imageData) {
+                                Image(uiImage: uiImage)
+                                    .resizable()
+                                    .clipShape(Circle())
+                                    .scaledToFit()
+                                    .frame(width: thumbSize, height: thumbSize)
+                            } else {
+                                Image(systemName: "questionmark")
+                                    .resizable()
+                                    .frame(width: thumbSize, height: thumbSize)
+                            }
+                            NavigationLink(exercise.name ?? "<missing name>") {
+                                CategoryListView()
+                            }.isDetailLink(true)
+                        }
+                    }
                 }
+                
             }
-            .padding()
             .navigationTitle("Exercises")
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {

@@ -9,6 +9,8 @@ import SwiftUI
 import PhotosUI
 
 struct AddExerciseView: View {
+    @Environment(\.managedObjectContext) var moc
+    
     @State var name: String = "";
     @State private var selectedItem: PhotosPickerItem? = nil
     @State private var selectedImageData: Data? = nil
@@ -20,16 +22,8 @@ struct AddExerciseView: View {
             TextField("Name", text: $name)
             // 
             PhotosPicker(selection: $selectedItem,
-                         matching: .images,
-                         photoLibrary: .shared()) {
+                         matching: .images) {
                 Text("Select a photo")
-                if let selectedImageData,
-                   let uiImage = UIImage(data: selectedImageData) {
-                    Image(uiImage: uiImage)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 250, height: 250)
-                }
 
             }.onChange(of: selectedItem) { newItem in
                 Task {
@@ -40,13 +34,31 @@ struct AddExerciseView: View {
                 }
             }
             
+            if let selectedImageData,
+               let uiImage = UIImage(data: selectedImageData) {
+                Image(uiImage: uiImage)
+                    .resizable()
+                    .clipShape(Circle())
+                    .scaledToFit()
+                    .frame(width: 250, height: 250)
+            }
         }
         .padding()
         .navigationTitle("Add Exercise")
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
-                Button("Submit") {
-                    dismiss()
+                if !name.isEmpty && selectedItem != nil && selectedImageData != nil {
+                    Button("Submit") {
+                        // todo save in db
+                        let exercise = Exercise(context: moc)
+                        exercise.id = UUID()
+                        exercise.name = name
+                        exercise.image = selectedImageData
+                        
+                        try? moc.save()
+                        
+                        dismiss()
+                    }
                 }
             }
             
