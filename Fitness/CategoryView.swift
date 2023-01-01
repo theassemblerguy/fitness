@@ -12,9 +12,22 @@ struct CategoryView: View {
     @Environment(\.managedObjectContext) var moc
     @Environment(\.dismiss) var dismiss
     
+    @FetchRequest private var unassignedExercises: FetchedResults<Exercise>
+    
     @State var category: ExerciseCategory
     @State private var name: String = ""
     @State private var changingName = false
+    @State private var isAddingExercise = false
+    
+    init(category: ExerciseCategory) {
+        _unassignedExercises = FetchRequest(
+            entity: Exercise.entity(),
+            sortDescriptors: [NSSortDescriptor(keyPath: \Exercise.name, ascending: true)],
+            predicate: NSPredicate(format: "category = nil")
+        )
+        
+        self._category = State(initialValue: category)
+    }
     
     var body: some View {
         
@@ -36,35 +49,18 @@ struct CategoryView: View {
                     ForEach(Array(category.exercises as? Set<Exercise> ?? []), id: \.self){ ex in
                         Text("\(ex.name ?? "")" )
                     }
-                    /*
-                    HStack {
-                        Text("Ex 1")
-                        Spacer()
-                        Button("Remove") {}
-                    }
-                     */
-                    
                 }
                 Button("Add") {
-                    
-                }
-            }
-        }.toolbar {
-            
-            /*
-            ToolbarItemGroup(placement: .navigationBarTrailing) {
-                if category.name != name {
-                    Button("Save") {
-                        // todo save in db
-                        category.name = name
-                        
-                        try? moc.save()
-                        
-                        //dismiss()
+                    isAddingExercise = true
+                }.alert("Add exercise", isPresented: $isAddingExercise) {
+                    List(unassignedExercises) { ex in
+                        Button(ex.name ?? "<unnamed>") {
+                            category.addToExercises(ex)
+                        }
                     }
+                    Button("Cancel", role: .cancel) { }
                 }
-            }
-             */
-        }.navigationTitle(category.name ?? "unnamed")
+            }.navigationTitle(category.name ?? "unnamed")
+        }
     }
 }
