@@ -47,7 +47,7 @@ struct ExerciseListView: View {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     NavigationLink(destination: AddExerciseView()) {
                         Image(systemName: "plus").font(.title)
-                    }
+                    }.accessibilityLabel("Add")
                 }
                 
             }

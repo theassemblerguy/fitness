@@ -9,7 +9,11 @@ import SwiftUI
 
 struct CategoryListView: View {
     
+    @Environment(\.managedObjectContext) var moc
+    
     @FetchRequest(sortDescriptors: []) var categories: FetchedResults<ExerciseCategory>;
+    @State private var addingCategory = false
+    @State private var newCatText = ""
     
     var body: some View {
         NavigationView {
@@ -22,8 +26,19 @@ struct CategoryListView: View {
             .navigationTitle("Categories")
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
-                    NavigationLink(destination: ContentView()) {
-                        Image(systemName: "plus").font(.title)
+                    Button("Add") {
+                        addingCategory = true
+                    }.alert("Add category", isPresented: $addingCategory) {
+                        TextField("Category", text: $newCatText)
+                        Button("OK") {
+                            let cat = ExerciseCategory(context: moc)
+                            cat.name = newCatText
+                            
+                            try? moc.save()
+                            
+                            newCatText = ""
+                        }
+                        Button("Cancel", role: .cancel) { }
                     }
                 }
             }
