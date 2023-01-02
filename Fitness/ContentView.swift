@@ -13,11 +13,15 @@ struct ContentView: View {
         TabView {
             ExerciseListView()
             .tabItem {
-                Label("Exercises", systemImage: "globe")
+                Label("Exercises", systemImage: "pip")
             }
             CategoryListView()
             .tabItem {
-                Label("Categories", systemImage: "tray.and.arrow.up.fill")
+                Label("Categories", systemImage: "sparkle")
+            }
+            WorkoutListView()
+            .tabItem {
+                Label("Workouts", systemImage: "wrench")
             }
         }
     }

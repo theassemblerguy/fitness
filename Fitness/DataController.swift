@@ -17,6 +17,5 @@ class DataController: ObservableObject {
                 print("Error loading stores: \(error.localizedDescription)")
             }
         }
-    }
-    
+    }    
 }

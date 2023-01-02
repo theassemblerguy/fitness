@@ -35,7 +35,7 @@ struct CategoryView: View {
             Button("Change name") {
                 name = category.name ?? ""
                 changingName = true
-            }.alert("Category Name", isPresented: $changingName) {
+            }.alert("Category name", isPresented: $changingName) {
                 TextField("Name", text: $name)
                 Button("OK") {
                     category.name = name
@@ -54,14 +54,14 @@ struct CategoryView: View {
                     isAddingExercise = true
                 }.alert("Add exercise", isPresented: $isAddingExercise) {
                     List(unassignedExercises) { ex in
-                        Button(ex.name ?? "<unnamed>") {
+                        Button(ex.name ?? "<missing name>") {
                             category.addToExercises(ex)
                             try? moc.save()
                         }
                     }
                     Button("Cancel", role: .cancel) { }
                 }
-            }.navigationTitle(category.name ?? "unnamed")
+            }.navigationTitle(category.name ?? "<missing name>")
         }
     }
 }

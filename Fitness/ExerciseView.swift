@@ -11,6 +11,10 @@ struct ExerciseView: View {
     var exercise: Exercise
     
     var body: some View {
-        Text(exercise.name ?? "<unnamed>")
+        imageFromData(data: exercise.image)
+            .scaledToFit()
+            .clipShape(Circle())
+            .padding()
+            .navigationTitle(exercise.name ?? "")
     }
 }

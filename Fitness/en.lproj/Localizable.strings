@@ -1,0 +1,24 @@
+/* 
+  Localizable.strings
+  Fitness
+
+  Created by Peter Bachmaier on 02.01.23.
+  
+*/
+
+"Exercises" = "Exercises";
+"Categories" = "Categories";
+"Workouts" = "Workouts";
+
+"Submit" = "Submit";
+"Cancel" = "Cancel";
+
+"Add" = "Add";
+"Add exercise" = "Add exercise";
+"Add workout" = "Add workout";
+"Add category" = "Add category";
+
+"Select a photo" = "Select a photo";
+"Change name" = "Change name";
+
+"noex" = "No exercises defined yet, go add one";

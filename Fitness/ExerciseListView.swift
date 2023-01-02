@@ -18,22 +18,14 @@ struct ExerciseListView: View {
             
             VStack {
                 if exercises.isEmpty {
-                    Text("No exercises defined yet, go add one")
+                    Text("noex")
                 } else {
                     List(exercises) { exercise in
                         HStack {
-                            if let imageData = exercise.image,
-                               let uiImage = UIImage(data: imageData) {
-                                Image(uiImage: uiImage)
-                                    .resizable()
-                                    .clipShape(Circle())
-                                    .scaledToFit()
-                                    .frame(width: thumbSize, height: thumbSize)
-                            } else {
-                                Image(systemName: "questionmark")
-                                    .resizable()
-                                    .frame(width: thumbSize, height: thumbSize)
-                            }
+                            imageFromData(data: exercise.image)
+                                .scaledToFit()
+                                .clipShape(Circle())
+                                .frame(width: thumbSize, height: thumbSize)
                             NavigationLink(exercise.name ?? "<missing name>") {
                                 ExerciseView(exercise: exercise)
                             }.isDetailLink(true)

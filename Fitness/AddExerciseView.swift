@@ -44,7 +44,7 @@ struct AddExerciseView: View {
             }
         }
         .padding()
-        .navigationTitle("Add Exercise")
+        .navigationTitle("Add exercise")
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
                 if !name.isEmpty && selectedItem != nil && selectedImageData != nil {
