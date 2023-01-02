@@ -10,8 +10,12 @@
 "Categories" = "Categories";
 "Workouts" = "Workouts";
 
+"Actions" = "Actions";
+
 "Submit" = "Submit";
 "Cancel" = "Cancel";
+"Edit" = "Edit";
+"Delete" = "Delete";
 
 "Add" = "Add";
 "Add exercise" = "Add exercise";

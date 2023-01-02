@@ -32,6 +32,7 @@ struct WorkoutListView: View {
                         TextField("Workout", text: $newWorkoutName)
                         Button("OK") {
                             let work = Workout(context: moc)
+                            work.id = UUID()
                             work.name = newWorkoutName
                             
                             try? moc.save()

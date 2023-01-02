@@ -8,9 +8,31 @@
 import SwiftUI
 
 struct WorkoutView: View {
+    @Environment(\.managedObjectContext) var moc
+    @Environment(\.dismiss) var dismiss
+    
     let workout: Workout
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Form {
+            Section("General") {
+                Text(workout.name ?? "")
+            }
+            Section("Exercises") {
+                
+            }
+            
+            Section("Actions") {
+                Button("Edit") {
+                    print("hi")
+                }
+                
+                Button("Delete") {
+                    moc.delete(workout);
+                    try? moc.save();
+                    dismiss()
+                }
+            }
+        }
     }
 }

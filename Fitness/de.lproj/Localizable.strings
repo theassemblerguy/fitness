@@ -10,8 +10,12 @@
 "Categories" = "Kategories";
 "Workouts" = "Workouts";
 
+"Actions" = "Aktionen";
+
 "Submit" = "Speichern";
 "Cancel" = "Abbrechen";
+"Edit" = "Bearbeiten";
+"Delete" = "Löschen";
 
 "Add" = "Neu";
 "Add exercise" = "Übung hinzufügen";

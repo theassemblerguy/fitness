@@ -50,6 +50,7 @@ struct CategoryView: View {
                         Text("\(ex.name ?? "")" )
                     }
                 }
+                
                 Button("Add") {
                     isAddingExercise = true
                 }.alert("Add exercise", isPresented: $isAddingExercise) {

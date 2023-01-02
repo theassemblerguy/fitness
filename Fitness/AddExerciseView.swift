@@ -66,9 +66,3 @@ struct AddExerciseView: View {
         
     }
 }
-
-struct AddExerciseView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddExerciseView()
-    }
-}

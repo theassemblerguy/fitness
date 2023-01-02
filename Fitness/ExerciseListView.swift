@@ -8,14 +8,12 @@
 import SwiftUI
 
 struct ExerciseListView: View {
-    
     let thumbSize: CGFloat = 40
     
     @FetchRequest(sortDescriptors: []) var exercises: FetchedResults<Exercise>;
     
     var body: some View {
         NavigationView {
-            
             VStack {
                 if exercises.isEmpty {
                     Text("noex")
@@ -44,11 +42,5 @@ struct ExerciseListView: View {
                 
             }
         }
-    }
-}
-
-struct ExerciseListView_Previews: PreviewProvider {
-    static var previews: some View {
-        ExerciseListView()
     }
 }
