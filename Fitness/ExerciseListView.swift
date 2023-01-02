@@ -35,7 +35,7 @@ struct ExerciseListView: View {
                                     .frame(width: thumbSize, height: thumbSize)
                             }
                             NavigationLink(exercise.name ?? "<missing name>") {
-                                CategoryListView()
+                                ExerciseView(exercise: exercise)
                             }.isDetailLink(true)
                         }
                     }

@@ -56,6 +56,7 @@ struct CategoryView: View {
                     List(unassignedExercises) { ex in
                         Button(ex.name ?? "<unnamed>") {
                             category.addToExercises(ex)
+                            try? moc.save()
                         }
                     }
                     Button("Cancel", role: .cancel) { }
