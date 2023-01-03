@@ -19,13 +19,13 @@ struct WorkoutView: View {
                 Text(workout.name ?? "")
             }
             Section("Exercises") {
-                
+                ForEach(Array((workout.exercises?.array ?? []) as! [Exercise]), id: \.self){ ex in
+                    Text("\(ex.name ?? "")" )
+                }
             }
             
             Section("Actions") {
-                Button("Edit") {
-                    print("hi")
-                }
+                NavigationLink("Edit", destination: WorkoutEditView(workout: workout))
                 
                 Button("Delete") {
                     moc.delete(workout);
