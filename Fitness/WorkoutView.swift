@@ -20,7 +20,7 @@ struct WorkoutView: View {
             }
             Section("Exercises") {
                 ForEach(Array((workout.exercises?.array ?? []) as! [Exercise]), id: \.self){ ex in
-                    Text("\(ex.name ?? "")" )
+                    SetsListingView(exercise: ex)
                 }
             }
             

@@ -11,6 +11,7 @@ struct ExerciseView: View {
     @Environment(\.managedObjectContext) var moc
     
     var exercise: Exercise
+    @State var updateViewTrigger: UInt32 = 0
     
     @State var isAdding = false;
     @State var newReps = "";
@@ -35,6 +36,10 @@ struct ExerciseView: View {
             Section("Sets") {
                 ForEach(Array(((exercise.sets?.array ?? []) as! [ExerciseSet]).enumerated()), id: \.element){ i, s in
                     Group {
+                        if updateViewTrigger == 0 {
+                            // dummy to trigger view update
+                        }
+                        
                         Text("\(i + 1). Set")
                         HStack {
                             Text("Repititions")
@@ -47,9 +52,7 @@ struct ExerciseView: View {
                             Text("\(s.weight) kg" )
                         }
                         Button("Delete") {
-                            exercise.removeFromSets(s)
-                            try? moc.save()
-                            // TODO: view not updated
+                            removeSet(s: s)
                         }
                     }
                 }
@@ -71,5 +74,12 @@ struct ExerciseView: View {
                 }
             }
         }
+    }
+    
+    func removeSet(s: ExerciseSet) {
+        exercise.removeFromSets(s)
+        moc.delete(s)
+        try? moc.save()
+        updateViewTrigger += 1
     }
 }

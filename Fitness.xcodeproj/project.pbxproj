@@ -12,6 +12,7 @@
 		22900CDC2963256500290DEB /* util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22900CDB2963256500290DEB /* util.swift */; };
 		22900CDF29635C7A00290DEB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22900CE129635C7A00290DEB /* Localizable.strings */; };
 		22900CE429643CA600290DEB /* WorkoutEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22900CE329643CA600290DEB /* WorkoutEditView.swift */; };
+		22900CE62964884400290DEB /* SetsListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22900CE52964884400290DEB /* SetsListingView.swift */; };
 		22DC839B295F1C020075961F /* FitnessApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DC839A295F1C020075961F /* FitnessApp.swift */; };
 		22DC839D295F1C020075961F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DC839C295F1C020075961F /* ContentView.swift */; };
 		22DC839F295F1C040075961F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22DC839E295F1C040075961F /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 		22900CE029635C7A00290DEB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		22900CE229635C9200290DEB /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		22900CE329643CA600290DEB /* WorkoutEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutEditView.swift; sourceTree = "<group>"; };
+		22900CE52964884400290DEB /* SetsListingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetsListingView.swift; sourceTree = "<group>"; };
 		22DC8397295F1C020075961F /* Fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22DC839A295F1C020075961F /* FitnessApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessApp.swift; sourceTree = "<group>"; };
 		22DC839C295F1C020075961F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				22DC83B929604A180075961F /* CategoryView.swift */,
 				22DC83BB296196B20075961F /* ExerciseView.swift */,
 				22900CE129635C7A00290DEB /* Localizable.strings */,
+				22900CE52964884400290DEB /* SetsListingView.swift */,
 			);
 			path = Fitness;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				22900CDC2963256500290DEB /* util.swift in Sources */,
 				22900CD8296320B800290DEB /* WorkoutListView.swift in Sources */,
 				22DC83A9295F236D0075961F /* ExerciseListView.swift in Sources */,
+				22900CE62964884400290DEB /* SetsListingView.swift in Sources */,
 				22DC83BC296196B20075961F /* ExerciseView.swift in Sources */,
 				22DC83B7295F4C3F0075961F /* AddExerciseView.swift in Sources */,
 				22DC83B3295F416B0075961F /* Model.xcdatamodeld in Sources */,
