@@ -7,17 +7,21 @@
 */
 
 "Exercises" = "Übungen";
-"Categories" = "Kategories";
+"Category" = "Kategorie";
+"Categories" = "Kategorien";
 "Workouts" = "Workouts";
 
 "Actions" = "Aktionen";
+
+"None" = "Keine";
 
 "Submit" = "Speichern";
 "Cancel" = "Abbrechen";
 "Edit" = "Bearbeiten";
 "Delete" = "Löschen";
 
-"Add" = "Neu";
+"New" = "Neu";
+"Add" = "Hinzufügen";
 "Add exercise" = "Übung hinzufügen";
 "Add exercise to workout" = "Übung zu Workout hinzufügen";
 "Add workout" = "Workout hinzufügen";
@@ -25,5 +29,7 @@
 
 "Select a photo" = "Photo auswählen";
 "Change name" = "Name ändern";
+
+"Kategorie löschen";
 
 "noex" = "Noch keine Übungen definiert";

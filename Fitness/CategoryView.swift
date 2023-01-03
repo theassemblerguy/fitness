@@ -44,6 +44,11 @@ struct CategoryView: View {
                 }
                 Button("Cancel", role: .cancel) { }
             }
+            Button("Delete category") {
+                moc.delete(category)
+                try? moc.save()
+                dismiss()
+            }
             Section("Exercises") {
                 List {
                     ForEach(Array(category.exercises as? Set<Exercise> ?? []), id: \.self){ ex in

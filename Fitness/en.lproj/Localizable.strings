@@ -7,16 +7,20 @@
 */
 
 "Exercises" = "Exercises";
+"Category" = "Category";
 "Categories" = "Categories";
 "Workouts" = "Workouts";
 
 "Actions" = "Actions";
+
+"None" = "None";
 
 "Submit" = "Submit";
 "Cancel" = "Cancel";
 "Edit" = "Edit";
 "Delete" = "Delete";
 
+"New" = "New";
 "Add" = "Add";
 "Add exercise" = "Add exercise";
 "Add exercise to workout" = "Add exercise to workout";
@@ -25,5 +29,7 @@
 
 "Select a photo" = "Select a photo";
 "Change name" = "Change name";
+
+"Delete category" = "Kategorie löschen";
 
 "noex" = "No exercises defined yet, go add one";

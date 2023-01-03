@@ -22,11 +22,10 @@ struct WorkoutListView: View {
                     NavigationLink(workout.name ?? "<missing name>", destination: WorkoutView(workout: workout))
                 }
             }
-            .padding()
             .navigationTitle("Workouts")
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
-                    Button("Add") {
+                    Button("New") {
                         addingWorkout = true
                     }.alert("Add workout", isPresented: $addingWorkout) {
                         TextField("Workout", text: $newWorkoutName)

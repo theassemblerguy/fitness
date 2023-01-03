@@ -10,7 +10,10 @@ import SwiftUI
 struct ExerciseView: View {
     @Environment(\.managedObjectContext) var moc
     
+    @FetchRequest(sortDescriptors: []) var categories: FetchedResults<ExerciseCategory>;
+    
     var exercise: Exercise
+    @State var category: UUID? = nil
     @State var updateViewTrigger: UInt32 = 0
     
     @State var isAdding = false;
@@ -32,6 +35,16 @@ struct ExerciseView: View {
                 .clipShape(Circle())
                 .padding()
                 .navigationTitle(exercise.name ?? "")
+            
+            Picker("Category", selection: $category) {
+                Text("None").tag(nil as UUID?)
+                ForEach(categories) { cat in
+                    
+                    Text(cat.name ?? "<missing name>").tag(cat.id)
+                }
+            }.onAppear {
+                category = exercise.category?.id
+            }
             
             Section("Sets") {
                 ForEach(Array(((exercise.sets?.array ?? []) as! [ExerciseSet]).enumerated()), id: \.element){ i, s in

@@ -22,16 +22,16 @@ struct CategoryListView: View {
                     NavigationLink(category.name ?? "<missing name>", destination: CategoryView(category: category))
                 }
             }
-            .padding()
             .navigationTitle("Categories")
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
-                    Button("Add") {
+                    Button("New") {
                         addingCategory = true
                     }.alert("Add category", isPresented: $addingCategory) {
                         TextField("Category", text: $newCatText)
                         Button("OK") {
                             let cat = ExerciseCategory(context: moc)
+                            cat.id = UUID()
                             cat.name = newCatText
                             
                             try? moc.save()
