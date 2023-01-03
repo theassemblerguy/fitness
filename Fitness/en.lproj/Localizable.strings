@@ -12,6 +12,7 @@
 "Workouts" = "Workouts";
 
 "Actions" = "Actions";
+"Statistics" = "Statistics";
 
 "None" = "None";
 
@@ -33,3 +34,6 @@
 "Delete category" = "Kategorie löschen";
 
 "noex" = "No exercises defined yet, go add one";
+"nr sets" = "Number of sets";
+"nr wo" = "Number of workouts with this exercise";
+"nr ex" = "Number of exercises";

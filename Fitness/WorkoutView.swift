@@ -18,8 +18,25 @@ struct WorkoutView: View {
             Section("General") {
                 Text(workout.name ?? "")
             }
+            
+            Section("Statistics") {
+                HStack {
+                    Text("nr ex")
+                    Spacer()
+                    Text("\(workout.exercises?.count ?? 0)")
+                }
+                HStack {
+                    Text("nr sets")
+                    Spacer()
+                    let nrSets = osToExArray(os: workout.exercises).map { ex in
+                        return ex.sets?.count ?? 1
+                    }.reduce(0, +);
+                    Text("\(nrSets)")
+                }
+            }
+            
             Section("Exercises") {
-                ForEach(Array((workout.exercises?.array ?? []) as! [Exercise]), id: \.self){ ex in
+                ForEach(osToExArray(os: workout.exercises), id: \.self){ ex in
                     SetsListingView(exercise: ex)
                 }
             }

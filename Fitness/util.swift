@@ -18,3 +18,7 @@ func imageFromData(data: Data?) -> Image {
             .resizable()
     }
 }
+
+func osToExArray(os: NSOrderedSet?) -> [Exercise] {
+    return Array((os?.array ?? []) as! [Exercise])
+}

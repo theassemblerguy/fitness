@@ -46,6 +46,19 @@ struct ExerciseView: View {
                 category = exercise.category?.id
             }
             
+            Section("Statistics") {
+                HStack {
+                    Text("nr sets")
+                    Spacer()
+                    Text("\(exercise.sets?.count ?? 0)")
+                }
+                HStack {
+                    Text("nr wo")
+                    Spacer()
+                    Text("\(exercise.workouts?.count ?? 0)")
+                }
+            }
+            
             Section("Sets") {
                 ForEach(Array(((exercise.sets?.array ?? []) as! [ExerciseSet]).enumerated()), id: \.element){ i, s in
                     Group {

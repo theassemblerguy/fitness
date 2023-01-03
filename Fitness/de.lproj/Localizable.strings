@@ -12,6 +12,7 @@
 "Workouts" = "Workouts";
 
 "Actions" = "Aktionen";
+"Statistics" = "Statistik";
 
 "None" = "Keine";
 
@@ -33,3 +34,6 @@
 "Kategorie löschen";
 
 "noex" = "Noch keine Übungen definiert";
+"nr sets" = "Anzahl Sätze";
+"nr wo" = "Anzahl Workouts mit dieser Übung";
+"nr ex" = "Anzahl Übungen";
