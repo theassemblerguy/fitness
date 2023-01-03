@@ -42,3 +42,4 @@
 "nr ex" = "Number of exercises";
 
 "confirm del %@" = "Do you really want to delete %@?";
+"Delete exercise?" = "Delete exercise?";

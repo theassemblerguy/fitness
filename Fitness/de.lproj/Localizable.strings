@@ -34,7 +34,7 @@
 "Select a photo" = "Photo auswählen";
 "Change name" = "Name ändern";
 
-"Kategorie löschen";
+"Delete category" = "Kategorie löschen";
 
 "noex" = "Noch keine Übungen definiert";
 "nr sets" = "Anzahl Sätze";
@@ -42,3 +42,4 @@
 "nr ex" = "Anzahl Übungen";
 
 "confirm del %@" = "Wollen Sie %@ wirklich löschen?";
+"Delete exercise?" = "Übung löschen?";
