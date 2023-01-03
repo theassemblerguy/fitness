@@ -37,3 +37,5 @@
 "nr sets" = "Anzahl Sätze";
 "nr wo" = "Anzahl Workouts mit dieser Übung";
 "nr ex" = "Anzahl Übungen";
+
+"confirm del %@" = "Wollen Sie %@ wirklich löschen?";

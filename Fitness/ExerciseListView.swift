@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct ExerciseListView: View {
-    let thumbSize: CGFloat = 40
+    private let thumbSize: CGFloat = 40
     
+    @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: []) var exercises: FetchedResults<Exercise>;
+    
+    @State private var deleteDialog = false
+    @State private var itemToDelete: Exercise? = nil
     
     var body: some View {
         NavigationView {
@@ -24,12 +28,32 @@ struct ExerciseListView: View {
                                 .scaledToFit()
                                 .clipShape(Circle())
                                 .frame(width: thumbSize, height: thumbSize)
+                                .onLongPressGesture(perform: {
+                                    itemToDelete = exercise
+                                    deleteDialog = true
+                                })
                             NavigationLink(exercise.name ?? "<missing name>") {
                                 ExerciseView(exercise: exercise)
-                            }.isDetailLink(true)
-                        }
+                            }
+                            .isDetailLink(true)
+                            .onLongPressGesture(perform: {
+                                itemToDelete = exercise
+                                deleteDialog = true
+                            })
+                        }.onLongPressGesture(perform: {
+                            itemToDelete = exercise
+                            deleteDialog = true
+                        })
                     }
                 }
+                
+            }.alert("Delete exercise?", isPresented: $deleteDialog) {
+                Button("Yes") {
+                    deleteItem(item: itemToDelete!)
+                }
+                Button("No", role: .cancel) {}
+            } message: {
+                Text("confirm del \(itemToDelete?.name ?? "")")
                 
             }
             .navigationTitle("Exercises")
@@ -42,5 +66,10 @@ struct ExerciseListView: View {
                 
             }
         }
+    }
+    
+    func deleteItem(item: Exercise) {
+        moc.delete(item)
+        try? moc.save()
     }
 }

@@ -37,3 +37,5 @@
 "nr sets" = "Number of sets";
 "nr wo" = "Number of workouts with this exercise";
 "nr ex" = "Number of exercises";
+
+"confirm del %@" = "Do you really want to delete %@?";
