@@ -27,6 +27,7 @@ struct WorkoutEditView: View {
                         Text("\(ex.name ?? "")" )
                         Button("Delete") {
                             workout.removeFromExercises(ex)
+                            try? moc.save()
                         }
                     }
                 }
