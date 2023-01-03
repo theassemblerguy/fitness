@@ -6,7 +6,7 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ExerciseCategory" inverseName="exercises" inverseEntity="ExerciseCategory"/>
         <relationship name="sets" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="ExerciseSet" inverseName="exercise" inverseEntity="ExerciseSet"/>
-        <relationship name="workouts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Workout" inverseName="exercises" inverseEntity="Workout"/>
+        <relationship name="workouts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Workout" inverseName="exercises" inverseEntity="Workout"/>
     </entity>
     <entity name="ExerciseCategory" representedClassName="ExerciseCategory" syncable="YES" codeGenerationType="class">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
@@ -22,6 +22,6 @@
     <entity name="Workout" representedClassName="Workout" syncable="YES" codeGenerationType="class">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <relationship name="exercises" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Exercise" inverseName="workouts" inverseEntity="Exercise"/>
+        <relationship name="exercises" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Exercise" inverseName="workouts" inverseEntity="Exercise"/>
     </entity>
 </model>
