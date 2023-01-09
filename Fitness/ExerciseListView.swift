@@ -53,7 +53,8 @@ struct ExerciseListView: View {
                 }
                 Button("No", role: .cancel) {}
             } message: {
-                Text("confirm del \(itemToDelete?.name ?? "")")
+                let exerciseName = itemToDelete?.name ?? ""
+                Text("confirm del \(exerciseName)")
                 
             }
             .navigationTitle("Exercises")

@@ -49,7 +49,6 @@ struct AddExerciseView: View {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
                 if !name.isEmpty && selectedItem != nil && selectedImageData != nil {
                     Button("Submit") {
-                        // todo save in db
                         let exercise = Exercise(context: moc)
                         exercise.id = UUID()
                         exercise.name = name
