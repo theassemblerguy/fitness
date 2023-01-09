@@ -9,7 +9,7 @@ Die Überschriften sind hierbei als Navigation Title innerhalb einer `Navigation
 was für ein dem iOS Nutzer bekanntes Bedienkonzept der Anwendung sorgt und stets eine Möglichkeit zum Zurückkhehren
 zur vorherigen View bietet.
 
-Prinzipiell wurde die App sowohl ins Deutsche als auch ins Englische lokalisiert. TODO Lobalizable.strings, keys
+Prinzipiell wurde die App sowohl ins Deutsche als auch ins Englische lokalisiert. Dafür wurden zwei separate Lobalizable.strings Dateien angelegt.
 Um den Rahmen dieser Dokumentation jedoch nicht zu sprengen, wird nachfolgend von Deutsch als Systemsprache ausgegangen.
 
 Es ergibt sich nun also für die Übungsansicht ein Button zum Hinzufügen von Übungen, welcher als Teil einer Toolbar mit einem Accessibility-Label (einer Beschriftung für die Barrierefreiheit) und einem `systemImage` für `plus` ausgestattet ist.
