@@ -22,15 +22,24 @@ Ein Tippen auf den Hinzufügen-button präsentiert die AddExerciseView, welche z
 Selbstverständlich wird auch der obligatorische Backbutton oben links angezeigt.
 Sobald beide Felder gefüllt sind, erscheint oben rechts ein Knopf zum Speichern der neuen Übung.
 
-CategoryListView
-Hinzufügen mit Alert
+Beim Langen drücken auf eine Übung in der `ExerciseListView` wird in einem Alert angeboten, die Übung zu löschen.
+Der Druck muss mindestens 1,5 Sekunden lang erfolgen.
 
-CategoryView
+Die CategoryListView zeigt den Namen aller Kategorien an. Beim Klick auf eine Kategorie wird die `CategoryView` auf den navigation stack gepushed.
+Zum Hinzufügen einer Kategorie wird der "Neu"-Button verwendet, welcher einen Alert öffnet. In diesem kann der Name der Kategorie eingetragen werden.
 
-WorkoutListView
-Hinzufügen mit Alert
+Die Details für die Kategorie, d.h. welche Übungen beinhaltet sind werden in der CategoryView festgelegt.
+Hierzu lädt diese sich eine Liste der nicht kategorisierten Übungen, um sie dem Nutzer falls nötig
+zu präsentieren.
 
-WorkoutView zum Trainieren, da sieht man die Sätze - zum Visualisieren der Sätze wurde eine untergeordnete View namens SetListingView definiert
-WorkoutEditView zum Anpassen des Workouts
+Zuletzt listet die WorkoutListView alle Workouts beim Namen auf. Auch hier wird analog zur CategoryListView ein Alert für die Erzeugung
+neuer Workouts vwerendet. Bei einem Klick auf ein Wokout wird die WorkoutView geöffnet, d.h. auch wieder auf den Navigation Stack
+gepushed.
 
-Realisierung der Datenbank mit Core Data. DataController sorgt für Laden der Datenbank nach dem Schema Model.xcdatamodeld
+Hierbei dient die WorkoutView primär zur Ansicht und zum Trainieren, wofür die einzelnen Sätze jeder Übung visualisiert werden.
+Es werden außerdem Statistiken zur Anzahl der Übungen und Anzahl der Sätze angezeigt.
+Zur einfacheren Umsetzung im Code und zur Teilung der Zuständigkeiten wurden die Sätze mit Hilfe einer zusätzlichen View,
+der `SetsListingView` visualisiert. in der `WorkoutView` kann das Workout gelöscht werden oder die Bearbeitungsansicht aufgerufen werden.
+Die Besonderheit der Bearbeitunsansicht ist, dass nur die Übungen augelistet werden, nicht jeder einzelne Satz.
+
+Zur Realisierung der Datenbank wurde Core Data. Dabei sorgt der DataController für das Laden der Datenbank nach dem Schema `Model.xcdatamodeld`.
