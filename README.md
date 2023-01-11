@@ -3,7 +3,7 @@
 ## Funktionsweise
 
 Unmittelbar nach Aufruf präsentiert die Fitness App einem standardmäßig die Liste der Übungen (ExerciseListView) in der ContentView, welche die TabBar enthält. Diese Liste von
-Übungen ist bei noch nicht gefütterter Datenbank allerdings selbstverständlich leer, was dazu führt, dass – vorausgesetzt Deutsch als Systemsprache eingestellt ist – der String "Noch keine
+Übungen ist bei noch nicht gefütterter Datenbank allerdings selbstverständlich leer, was dazu führt, dass – vorausgesetzt Deutsch ist als Systemsprache eingestellt – der String "Noch keine
 Übungen definiert" unter der Überschrift „Übungen“ angezeigt wird.
 Die Überschriften sind hierbei als Navigation Title innerhalb einer `NavigationView` definiert,
 was für ein dem iOS Nutzer bekanntes Bedienkonzept der Anwendung sorgt und stets eine Möglichkeit zum Zurückkehren
@@ -18,14 +18,14 @@ Darunter die bereits erwähnte Überschrift Übungen und je nach Zustand der Dat
 Namen (Text) bestehen.  Außerhalb dieser ExerciseListView, also in der ContentView findet sich wie gehabt die TabBar, welche allerdings zeitgleich unter dieser Übungsliste
 präsentiert wird. Die enthaltenen Tabs heißen „Übungen“, „Kategorien“ und „Workouts“. Zum Start der App ist hier logischerweise „Übungen“ ausgewählt.
 
-Ein Tippen auf den Hinzufügen-button präsentiert die AddExerciseView, welche zunächst ein Texteingabefeld für den Namen der Übung, sowie einen Button zur Fotoauswahl bietet.
+Ein Tippen auf den Hinzufügen-Button präsentiert die `AddExerciseView`, welche zunächst ein Texteingabefeld für den Namen der Übung, sowie einen Button zur Fotoauswahl bietet.
 Selbstverständlich wird auch der obligatorische Backbutton oben links angezeigt.
 Sobald beide Felder gefüllt sind, erscheint oben rechts ein Knopf zum Speichern der neuen Übung.
 
 Beim Langen drücken auf eine Übung in der `ExerciseListView` wird in einem Alert angeboten, die Übung zu löschen.
 Der Druck muss mindestens 1,5 Sekunden lang erfolgen.
 
-Die CategoryListView zeigt den Namen aller Kategorien an. Beim Klick auf eine Kategorie wird die `CategoryView` auf den navigation stack gepushed.
+Die CategoryListView zeigt den Namen aller Kategorien an. Beim Klick auf eine Kategorie wird die `CategoryView` auf den Navigation Stack gepushed.
 Zum Hinzufügen einer Kategorie wird der "Neu"-Button verwendet, welcher einen Alert öffnet. In diesem kann der Name der Kategorie eingetragen werden.
 
 Die Details für die Kategorie, d.h. welche Übungen beinhaltet sind werden in der CategoryView festgelegt.
@@ -39,7 +39,8 @@ gepushed.
 Hierbei dient die WorkoutView primär zur Ansicht und zum Trainieren, wofür die einzelnen Sätze jeder Übung visualisiert werden.
 Es werden außerdem Statistiken zur Anzahl der Übungen und Anzahl der Sätze angezeigt.
 Zur einfacheren Umsetzung im Code und zur Teilung der Zuständigkeiten wurden die Sätze mit Hilfe einer zusätzlichen View,
-der `SetsListingView` visualisiert. In der `WorkoutView` kann das Workout gelöscht werden oder die Bearbeitungsansicht aufgerufen werden.
+der `SetsListingView`, visualisiert. In der `WorkoutView` kann das Workout gelöscht werden oder die Bearbeitungsansicht aufgerufen werden.
 Die Besonderheit der Bearbeitunsansicht ist, dass nur die Übungen aufgelistet werden, nicht jeder einzelne Satz.
 
 Zur Realisierung der Datenbank wurde Core Data verwendet. Dabei sorgt der DataController für das Laden der Datenbank nach dem Schema `Model.xcdatamodeld`.
+
