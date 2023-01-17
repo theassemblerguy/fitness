@@ -15,6 +15,11 @@
 "Actions" = "Aktionen";
 "Statistics" = "Statistik";
 
+"Sets" = "Sätze";
+"Add set" = "Satz hinzufügen";
+"Weight" = "Gewicht";
+"Repitions" = "Wiederholungen";
+
 "None" = "Keine";
 
 "Submit" = "Speichern";
